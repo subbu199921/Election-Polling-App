@@ -1,0 +1,15 @@
+{% extends 'polling/base.html' %}
+{% block content %}
+<div class="bg-white p-6 rounded-lg shadow-md animate__animated animate__fadeIn flex flex-col items-center border border-gray-200">
+    <h1 class="text-3xl font-bold mb-4 flex items-center">
+        <i class="fas fa-vote-yea text-blue-600 mr-2"></i> Vote
+    </h1>
+    <form method="post" class="w-full max-w-md">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="bg-gradient-to-r from-purple-600 to-purple-800 text-white px-4 py-2 rounded-lg hover:from-purple-700 hover:to-purple-900 transition-all transform hover:scale-105">
+            <i class="fas fa-paper-plane mr-1"></i> Submit Vote
+        </button>
+    </form>
+</div>
+{% endblock %}

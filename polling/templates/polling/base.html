@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Election Polling</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js" defer></script>
+    <style>
+        .hover-animate:hover {
+            transform: scale(1.1);
+            transition: transform 0.3s ease-in-out;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #ff7eb3, #ff758c, #ff7eb3);
+        }
+        .animated-button {
+            transition: all 0.3s ease-in-out;
+        }
+        .animated-button:hover {
+            background-color: #ff3b6f;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Navigation Bar -->
+    <nav class="gradient-bg p-4 text-white shadow-lg animate__animated animate__fadeInDown sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="/" class="text-2xl font-bold hover:text-gray-200 transition-colors duration-300 hover-animate flex items-center">
+                <i class="fas fa-vote-yea mr-2"></i> Election Polling
+            </a>
+            <div class="flex space-x-6">
+                <a href="/vote/" class="hover:text-gray-200 transition-colors duration-300 hover-animate flex items-center">
+                    <i class="fas fa-check-circle mr-1"></i> Vote
+                </a>
+                <a href="/results/" class="hover:text-gray-200 transition-colors duration-300 hover-animate flex items-center">
+                    <i class="fas fa-chart-bar mr-1"></i> Results
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mx-auto p-6 animate__animated animate__fadeInUp">
+        {% block content %}{% endblock %}
+    </div>
+
+    <!-- Footer -->
+    <footer class="gradient-bg text-white py-8 mt-12 animate__animated animate__fadeInUp relative bottom-0 w-full">
+        <div class="container mx-auto text-center">
+            <p class="text-gray-200">&copy; 2023 Election Polling. All rights reserved.</p>
+            <div class="mt-4 flex justify-center space-x-4">
+                <a href="#" class="text-gray-200 hover:text-white transition-colors duration-300 hover-animate flex items-center">
+                    <i class="fas fa-user-shield mr-1"></i> Privacy Policy
+                </a>
+                <a href="#" class="text-gray-200 hover:text-white transition-colors duration-300 hover-animate flex items-center">
+                    <i class="fas fa-file-contract mr-1"></i> Terms of Service
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

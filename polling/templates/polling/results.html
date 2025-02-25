@@ -1,0 +1,15 @@
+{% extends 'polling/base.html' %}
+{% block content %}
+<h1 class="text-3xl font-bold mb-6 animate__animated animate__fadeIn flex items-center">
+    <i class="fas fa-chart-pie text-blue-600 mr-2"></i> Results
+</h1>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    {% for party in parties %}
+    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow transform hover:scale-105 animate__animated animate__fadeInUp flex flex-col items-center border border-gray-200">
+        <i class="fas fa-poll text-4xl text-blue-500 mb-3"></i>
+        <h2 class="text-xl font-bold mb-2 text-gray-800">{{ party.name }}</h2>
+        <p class="text-gray-600 text-center">Total Votes: {{ party.total_votes }}</p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
